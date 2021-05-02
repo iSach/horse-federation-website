@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS Membre(
 CREATE TABLE IF NOT EXISTS Cheval(
   numero INT,
   nom VARCHAR(50) NOT NULL,
-  sexe VARCHAR(1) NOT NULL,
+  sexe CHAR(1) NOT NULL,
   taille INT(3) NOT NULL,
   date_naissance DATE NOT NULL,
   PRIMARY KEY (numero)
