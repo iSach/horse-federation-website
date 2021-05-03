@@ -55,7 +55,7 @@
                 <form method="post" action="login.php">
                     <p>
                         <label>
-                            <input type="text" name="login" placeholder="Identifiant" required>
+                            <input type="text" name="login" placeholder="Nom d'utilisateur" required>
                         </label>
                         <label>
                             <input type="password" name="pass" placeholder="Mot de passe" required><br><br>
