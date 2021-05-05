@@ -25,7 +25,7 @@
        	 	</header>
         	<nav>
            	 	<ul>
-                	<li> <a href="contentTable.php"> Contenu </a></li>
+                	<li> <a href="chooseTable.php"> Contenu </a></li>
                 	<li> <a href="addTable.php"> Ajouter </a></li>
                 	<li> <a href="displayTable.php"> Afficher </a></li>
             	</ul>
