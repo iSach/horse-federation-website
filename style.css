@@ -1,0 +1,139 @@
+/* Général */
+body{
+    font-family: Georgia, sans-serif;
+    background: #AEAEAE;
+}
+
+form {
+	width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    justify-content:center;
+    border: 1px solid black;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#page h1 {
+    width: 100px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+input[type=text], input[type=password], input[type=number], input[type=email] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 100%;
+    background-color: #3399FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: #3399FF;
+    border: 1px solid #3399FF;
+}
+
+/* Déconnexion */
+#deco{
+ 	position: absolute;
+ 	font color: #000000;
+ 	right: 10px;
+}
+a{
+	text-decoration: none;
+	font color: #000000;
+}
+a:visited{
+	color: #000000;
+}
+
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#3399FF   ;
+    display:flex;
+    justify-content:center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+nav li a {
+    display: block;
+    color:#2E2E2E;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color:white ;
+    color: #C8AD7F;
+    border: 1px solid #C8AD7F;
+}
+
+/* Message de bienvenue sur le menu */
+#bienvenue{
+	width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    justify-content:center;
+    border: 1px solid black;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* Table des résultats */
+
+
+table{
+	border-collapse: collapse;
+	width: 1200px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    justify-content:center;
+    border: 1px solid black;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+th{
+	border: 1px solid black;
+	font-size: medium;
+	font-family: Verdana, sans-serif;
+}
+td{
+	border: 1px solid black;
+	font-size: small;
+	font-family: Verdana;
+}
+
+#ajout{
+	width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    justify-content:center;
+    border: 1px solid black;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
