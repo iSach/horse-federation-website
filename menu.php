@@ -28,6 +28,7 @@
                 	<li> <a href="actionA/chooseTable.php"> Contenu </a></li>
                 	<li> <a href="actionB/displayTable.php"> Liste ordres </a></li>
                 	<li> <a href="displayTable.php"> Afficher </a></li>
+                    <li> <a href="actionD/participation.php"> Participation </a></li>
             	</ul>
     		</nav>
 
