@@ -20,7 +20,7 @@
     <body>
         <header>
         		<div id="deco">
-        			<a href="../deconnexion.php"> Déconnexion </a>
+                    <a class="deco" href="../deconnexion.php"> Déconnexion </a>
         		</div>
         		<a href="../menu.php"> <p style="text-align: center"><img src="../Images/UliegeLogo.png" width="25%"></p> </a>
 
@@ -30,7 +30,7 @@
                 <li> <a href="../menu.php"> Accueil </a></li>
                 <li> <a href="chooseTable.php"> Contenu </a></li>
                 <li> <a href="../actionB/displayTable.php"> Liste ordres </a></li>
-                <li> <a href="../actionC/displayTable.php"> Afficher </a></li>
+                <li> <a href="../actionC/addResult.php"> Ajouter un résultat </a></li>
                 <li> <a href="../actionD/participation.php"> Participations </a></li>
                 <li> <a href="../actionE/memberByResults.php"> Résultats </a></li>
             </ul>
