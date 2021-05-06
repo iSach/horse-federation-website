@@ -24,11 +24,14 @@
 
        	</header>
        	<nav>
-           	 	<ul>
+            <ul>
+                <li> <a href="../menu.php"> Accueil </a></li>
                 <li> <a href="chooseTable.php"> Contenu </a></li>
                 <li> <a href="../actionB/displayTable.php"> Liste ordres </a></li>
                 <li> <a href="../actionC/displayTable.php"> Afficher </a></li>
-            	</ul>
+                <li> <a href="../actionD/participation.php"> Participations </a></li>
+                <li> <a href="../actionE/memberByResults.php"> Résultats </a></li>
+            </ul>
     	</nav>
 
         <?php

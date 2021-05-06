@@ -29,8 +29,8 @@
             <li> <a href="../actionA/chooseTable.php"> Contenu </a></li>
             <li> <a href="../actionB/displayTable.php"> Liste ordres </a></li>
             <li> <a href="../actionC/displayTable.php"> Afficher </a></li>
-            <li> <a href="participation.php"> Participation </a></li>
-            <li> <a href="../actionE/memberByResults.php"> Résultats </a></li>
+            <li> <a href="../actionD/participation.php"> Participation </a></li>
+            <li> <a href="memberByResults.php"> Résultats </a></li>
         </ul>
     </nav>
     <?php
@@ -40,36 +40,38 @@
     }catch (Exception $e){
         die('Erreur: '.$e->getMessage());
     }
-    $query = 'SELECT id,nom,prenom 
+    $query = 'SELECT id, nom, prenom, score, nb_inst
+              FROM Membre NATURAL JOIN
+                  (SELECT numero_membre AS id, COUNT(nom) AS nb_inst, SUM(resultat) AS score
+                  FROM Participe 
+                  GROUP BY id) AS t1
+              UNION	
+              SELECT id, nom, prenom, 0 AS score, 0 AS nb_inst 
               FROM Membre 
-              WHERE id IN 
-                    (SELECT numero_membre
-                    FROM
-                        (SELECT nom FROM Obstacles) AS t1
-                        NATURAL JOIN
-                        (SELECT DISTINCT numero_membre,nom FROM Participe) AS t2
-                    GROUP BY numero_membre
-                    HAVING COUNT(nom) = (SELECT COUNT(*) FROM Obstacles)
-                    )';
+              WHERE id NOT IN 
+                  (SELECT DISTINCT numero_membre
+                  FROM Participe)	
+              ORDER BY score DESC, nb_inst DESC, id ASC';
     $req = $bdd->query($query);
     ?>
-    <h2 style="text-align: center">Membre ayant participé à toutes les courses d'obstacles : </h2>
+    <h2 style="text-align: center">Somme des points pour chaque membre par ordre décroissant : </h2>
     <table>
         <thead>
         <tr>
             <th width=15%>ID</th>
             <th>Nom</th>
             <th>Prénom</th>
+            <th>Score total</th>
+            <th>Nombre d'instances</th>
         </tr>
         </thead>
         <tbody>
         <?php
         while($data = $req->fetch()){
-            echo '<tr> <td> '.$data['id'].'</td><td>'.$data['nom'].'</td><td>'.$data['prenom'].'</td> </tr> ';
+            echo '<tr> <td> '.$data['id'].'</td><td>'.$data['nom'].'</td><td>'.$data['prenom'].'</td><td>'.$data['score'].'</td><td>'.$data['nb_inst'].'</td></tr> ';
         }
         ?>
         </tbody>
     </table>
     </body>
 </html>
-
