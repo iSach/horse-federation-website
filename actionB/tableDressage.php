@@ -47,22 +47,20 @@
 
     switch($_POST["choixDressage"]){
     case "cointe":
-        $query = 'SELECT * FROM ordres WHERE nom LIKE ' . "'%CHI de Cointe%'" . ' ORDER BY ordre';
+        $query = 'SELECT ordre FROM Ordres WHERE nom LIKE ' . "'%CHI de Cointe%'" . ' ORDER BY ordre ASC';
         $req = $bdd->query($query);
     ?>
-    <h2 style="text-align: center">Dressages : </h2>
+    <h2 style="text-align: center">Liste des ordres triés alphabétiquement : </h2>
     <table>
         <thead>
         <tr>
-            <th width=15%>Nom</th>
-            <th>Numéro</th>
             <th>Ordre</th>
         </tr>
         </thead>
         <tbody>
         <?php
         while($data = $req->fetch()){
-            echo '<tr> <td> '.$data['nom'].'</td><td>'.$data['numero'].'</td><td>'.$data['ordre'].'</td> </tr> ';
+            echo '<tr> <td> '.$data['ordre'].'</td> </tr> ';
         }
         ?>
         </tbody>
@@ -70,22 +68,20 @@
     <?php
     break;
     case "vise":
-    $query = 'SELECT * FROM ordres WHERE nom LIKE ' . "'%CHI de Visé%'" . ' ORDER BY ordre';
+    $query = 'SELECT ordre FROM Ordres WHERE nom LIKE ' . "'%CHI de Visé%'" . ' ORDER BY ordre ASC';
     $req = $bdd->query($query);
-    ?>
-    <h2 style="text-align: center">Dressages : </h2>
-    <table>
-        <thead>
-        <tr>
-            <th width=15%>Nom</th>
-            <th>Numéro</th>
-            <th>Ordre</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        while($data = $req->fetch()){
-            echo '<tr> <td> '.$data['nom'].'</td><td>'.$data['numero'].'</td><td>'.$data['ordre'].'</td> </tr> ';
+?>
+<h2 style="text-align: center">Liste des ordres triés alphabétiquement : </h2>
+<table>
+    <thead>
+    <tr>
+        <th>Ordre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    while($data = $req->fetch()){
+        echo '<tr> <td> '.$data['ordre'].'</td> </tr> ';
         }
         ?>
         </tbody>
@@ -93,22 +89,20 @@
         <?php
         break;
     case "waremme":
-    $query = 'SELECT * FROM ordres WHERE nom LIKE ' . "'%CHI de Waremme%'" . ' ORDER BY ordre';
+    $query = 'SELECT ordre FROM Ordres WHERE nom LIKE ' . "'%CHI de Waremme%'" . ' ORDER BY ordre ASC';
     $req = $bdd->query($query);
-    ?>
-    <h2 style="text-align: center">Dressages : </h2>
-    <table>
-        <thead>
-        <tr>
-            <th width=15%>Nom</th>
-            <th>Numéro</th>
-            <th>Ordre</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        while($data = $req->fetch()){
-            echo '<tr> <td> '.$data['nom'].'</td><td>'.$data['numero'].'</td><td>'.$data['ordre'].'</td> </tr> ';
+?>
+<h2 style="text-align: center">Liste des ordres triés alphabétiquement : </h2>
+<table>
+    <thead>
+    <tr>
+        <th>Ordre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    while($data = $req->fetch()){
+        echo '<tr> <td> '.$data['ordre'].'</td> </tr> ';
         }
         ?>
         </tbody>
@@ -116,22 +110,20 @@
         <?php
         break;
     case "herve":
-    $query = 'SELECT * FROM ordres WHERE nom LIKE ' . "'%Grande course de Herve%'" . ' ORDER BY ordre';
+    $query = 'SELECT ordre FROM Ordres WHERE nom LIKE ' . "'%Grande course de Herve%'" . ' ORDER BY ordre ASC';
     $req = $bdd->query($query);
-    ?>
-    <h2 style="text-align: center">Compétition de dressages : </h2>
-    <table>
-        <thead>
-        <tr>
-            <th width=15%>Nom</th>
-            <th>Numéro</th>
-            <th>Ordre</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        while($data = $req->fetch()){
-            echo '<tr> <td> '.$data['nom'].'</td><td>'.$data['numero'].'</td><td>'.$data['ordre'].'</td> </tr> ';
+?>
+<h2 style="text-align: center">Liste des ordres triés alphabétiquement : </h2>
+<table>
+    <thead>
+    <tr>
+        <th>Ordre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    while($data = $req->fetch()){
+        echo '<tr> <td> '.$data['ordre'].'</td> </tr> ';
         }
         ?>
         </tbody>
