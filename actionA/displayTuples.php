@@ -2,11 +2,11 @@
     session_start();
     header('Content-Type: text/html; charset=utf-8');
 
-    include 'credentials.php';
+    include '../credentials.php';
     if (!isset($_SESSION['login']) OR $_SESSION['login'] != $login )
     {
         session_destroy();
-        header("Location: ./index.php");
+        header("Location: ../index.php");
     }
 ?>
 
@@ -15,21 +15,21 @@
     <head>
         <meta charset="utf-8">
         <title>Affichage des tuples</title>
-        <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+        <link rel="stylesheet" href="../style.css" media="screen" type="text/css" />
     </head>
     <body>
         <header>
         		<div id="deco">
-        			<a href="deconnexion.php"> Déconnexion </a>
+        			<a href="../deconnexion.php"> Déconnexion </a>
         		</div>
-        		<a href="menu.php"> <p style="text-align: center"><img src="Images/UliegeLogo.png" width="25%"></p> </a>
+        		<a href="../menu.php"> <p style="text-align: center"><img src="../Images/UliegeLogo.png" width="25%"></p> </a>
 
        	</header>
        	<nav>
            	 	<ul>
-                	<li> <a href="chooseTable.php"> Contenu </a></li>
-                	<li> <a href="addTable.php"> Ajouter </a></li>
-                	<li> <a href="displayTable.php"> Afficher </a></li>
+                <li> <a href="chooseTable.php"> Contenu </a></li>
+                <li> <a href="../actionB/displayTable.php"> Liste ordres </a></li>
+                <li> <a href="../actionC/displayTable.php"> Afficher </a></li>
             	</ul>
     	</nav>
 
@@ -42,13 +42,13 @@
         }
 
         if(!isset($_SESSION['nomTable'])){
-        	header("Location: ./menu.php");
+        	header("Location: ../menu.php");
         }
 
         switch ($_SESSION['nomTable']) {
         	case 'Club':
         		if(!isset($_POST['numero']) OR !isset($_POST['nom']) OR !isset($_POST['code_postal']) OR !isset($_POST['localite']) OR !isset($_POST['rue']) OR !isset($_POST['num']) OR !isset($_POST['id_president'])){
-        			header("Location: ./menu.php");
+        			header("Location: ../menu.php");
         		}
 
         		 $_POST['numero'] = str_replace("'" , "\'" ,  $_POST['numero']);
@@ -112,7 +112,7 @@
         		break;
         	case 'Membre':
         		if(!isset($_POST['id']) OR !isset($_POST['nom']) OR !isset($_POST['prenom']) OR !isset($_POST['email']) OR !isset($_POST['id_club'])){
-        			header("Location: ./menu.php");
+        			header("Location: ../menu.php");
         		}
 
         		$_POST['id'] = str_replace("'" , "\'" ,  $_POST['id']);
@@ -164,7 +164,7 @@
         		break;
         	case 'Cheval':
         		if(!isset($_POST['numero']) OR !isset($_POST['nom']) OR !isset($_POST['sexe']) OR !isset($_POST['taille']) OR !isset($_POST['date'])){
-        			header("Location: ./menu.php");
+        			header("Location: ../menu.php");
         		}
 
         		$_POST['numero'] = str_replace("'" , "\'" ,  $_POST['numero']);
@@ -220,7 +220,7 @@
         		break;
           case 'ProprieteDe':
             if(!isset($_POST['id_membre']) OR !isset($_POST['id_cheval'])){
-              header("Location: ./menu.php");
+              header("Location: ../menu.php");
             }
 
             $_POST['id_membre'] = str_replace("'" , "\'" ,  $_POST['id_membre']);
@@ -273,7 +273,7 @@
         		break;
         	case 'Competition':
         		if(!isset($_POST['nom']) OR !isset($_POST['libelle'])){
-        			header("Location: ./menu.php");
+        			header("Location: ../menu.php");
         		}
 
         		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
@@ -312,7 +312,7 @@
         		break;
         	case 'Obstacle':
         		if(!isset($_POST['nom']) OR !isset($_POST['nb_haies'])){
-        			header("Location: ./menu.php");
+        			header("Location: ../menu.php");
         		}
 
         		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
@@ -355,7 +355,7 @@
         		break;
           case 'Dressage':
         		if(!isset($_POST['nom'])){
-        			header("Location: ./menu.php");
+        			header("Location: ../menu.php");
         		}
 
         		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
@@ -391,7 +391,7 @@
         		break;
         	case 'Ordres':
         		if(!isset($_POST['nom_comp']) OR !isset($_POST['numero']) OR !isset($_POST['ordre'])){
-        			header("Location: ./menu.php");
+        			header("Location: ../menu.php");
         		}
 
         		$_POST['nom_comp'] = str_replace("'" , "\'" ,  $_POST['nom_comp']);
@@ -437,7 +437,7 @@
         		break;
         	case 'InstanceComp':
         		if(!isset($_POST['nom']) OR !isset($_POST['annee']) OR !isset($_POST['id_organisateur'])){
-        			header("Location: ./menu.php");
+        			header("Location: ../menu.php");
         		}
 
         		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
@@ -486,7 +486,7 @@
         		break;
         	case 'Participe':
         		if(!isset($_POST['id_membre']) OR !isset($_POST['nom']) OR !isset($_POST['annee'])  OR !isset($_POST['id_cheval']) OR !isset($_POST['resultat'])){
-        			header("Location: ./menu.php");
+        			header("Location: ../menu.php");
         		}
 
             $_POST['id_membre'] = str_replace("'" , "\'" ,  $_POST['id_membre']);
@@ -547,7 +547,7 @@
         <?php
         		break;
         	default:
-            	header("Location: ./menu.php");
+            	header("Location: ../menu.php");
                 break;
         }
         ?>

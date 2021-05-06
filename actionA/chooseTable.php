@@ -1,10 +1,10 @@
 <?php
     session_start();
-    include 'credentials.php';
+    include '../credentials.php';
     if (!isset($_SESSION['login']) OR $_SESSION['login'] != $login )
     {
         session_destroy();
-        header("Location: ./index.php");
+        header("Location: ../index.php");
     }
 ?>
 
@@ -13,21 +13,21 @@
     <head>
         <meta charset="utf-8">
         <title>Contenu</title>
-        <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+        <link rel="stylesheet" href="../style.css" media="screen" type="text/css" />
     </head>
     <body>
         <header>
         		<div id="deco">
-        			<a href="deconnexion.php"> Déconnexion </a>
+        			<a href="../deconnexion.php"> Déconnexion </a>
         		</div>
-        		<a href="menu.php"> <p style="text-align: center"><img src="Images/UliegeLogo.png" width="25%"></p> </a>
+        		<a href="../menu.php"> <p style="text-align: center"><img src="../Images/UliegeLogo.png" width="25%"></p> </a>
 
        	</header>
        	<nav>
            	 	<ul>
-                	<li> <a href="chooseTable.php"> Contenu </a></li>
-                	<li> <a href="addTable.php"> Ajouter </a></li>
-                	<li> <a href="displayTable.php"> Afficher </a></li>
+                <li> <a href="chooseTable.php"> Contenu </a></li>
+                <li> <a href="../actionB/displayTable.php"> Liste ordres </a></li>
+                <li> <a href="../actionC/displayTable.php"> Afficher </a></li>
             	</ul>
     	</nav>
 
