@@ -40,18 +40,16 @@
     }catch (Exception $e){
         die('Erreur: '.$e->getMessage());
     }
-
     if (isset($_POST['choixDressage'])){
+        $name = $_POST['choixDressage'];
         $_SESSION['choixDressage'] = $_POST['choixDressage'];
     }
     else{
         header("Location: ../menu.php");
     }
-
-    switch($_POST["choixDressage"]){
-    case "cointe":
-        $query = 'SELECT ordre FROM Ordres WHERE nom LIKE ' . "'%CHI de Cointe%'" . ' ORDER BY ordre ASC';
-        $req = $bdd->query($query);
+    $name = trim($name);
+    $query = 'SELECT ordre FROM Ordres WHERE nom LIKE '. "'%" . $name . "%'" . ' ORDER BY ordre ASC';
+    $req = $bdd->query($query);
     ?>
     <h2 style="text-align: center">Liste des ordres triés alphabétiquement : </h2>
     <table>
@@ -68,75 +66,5 @@
         ?>
         </tbody>
     </table>
-    <?php
-    break;
-    case "vise":
-    $query = 'SELECT ordre FROM Ordres WHERE nom LIKE ' . "'%CHI de Visé%'" . ' ORDER BY ordre ASC';
-    $req = $bdd->query($query);
-?>
-<h2 style="text-align: center">Liste des ordres triés alphabétiquement : </h2>
-<table>
-    <thead>
-    <tr>
-        <th>Ordre</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    while($data = $req->fetch()){
-        echo '<tr> <td> '.$data['ordre'].'</td> </tr> ';
-        }
-        ?>
-        </tbody>
-    </table>
-        <?php
-        break;
-    case "waremme":
-    $query = 'SELECT ordre FROM Ordres WHERE nom LIKE ' . "'%CHI de Waremme%'" . ' ORDER BY ordre ASC';
-    $req = $bdd->query($query);
-?>
-<h2 style="text-align: center">Liste des ordres triés alphabétiquement : </h2>
-<table>
-    <thead>
-    <tr>
-        <th>Ordre</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    while($data = $req->fetch()){
-        echo '<tr> <td> '.$data['ordre'].'</td> </tr> ';
-        }
-        ?>
-        </tbody>
-    </table>
-        <?php
-        break;
-    case "herve":
-    $query = 'SELECT ordre FROM Ordres WHERE nom LIKE ' . "'%Grande course de Herve%'" . ' ORDER BY ordre ASC';
-    $req = $bdd->query($query);
-?>
-<h2 style="text-align: center">Liste des ordres triés alphabétiquement : </h2>
-<table>
-    <thead>
-    <tr>
-        <th>Ordre</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    while($data = $req->fetch()){
-        echo '<tr> <td> '.$data['ordre'].'</td> </tr> ';
-        }
-        ?>
-        </tbody>
-    </table>
-    <?php
-        break;
-    default :
-        header("Location: ../menu.php");
-        break;
-    }
-    ?>
     </body>
 </html>
