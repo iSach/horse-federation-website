@@ -40,8 +40,6 @@
                 Bienvenue dans la base de donnée de Fédération équestre !
                 </p>
             </div>
-
-
         </main>
     </body>
 </html>
