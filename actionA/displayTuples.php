@@ -26,11 +26,14 @@
 
        	</header>
        	<nav>
-           	 	<ul>
+            <ul>
+                <li> <a href="../menu.php"> Accueil </a></li>
                 <li> <a href="chooseTable.php"> Contenu </a></li>
                 <li> <a href="../actionB/displayTable.php"> Liste ordres </a></li>
                 <li> <a href="../actionC/displayTable.php"> Afficher </a></li>
-            	</ul>
+                <li> <a href="../actionD/participation.php"> Participations </a></li>
+                <li> <a href="../actionE/memberByResults.php"> Résultats </a></li>
+            </ul>
     	</nav>
 
         <?php
@@ -107,7 +110,7 @@
              				}
              			?>
              		</tbody>
-             	<table>
+             	</table>
         <?php
         		break;
         	case 'Membre':
@@ -159,21 +162,21 @@
             				}
             			?>
             		</tbody>
-            	<table>
+            	</table>
         <?php
         		break;
         	case 'Cheval':
-        		if(!isset($_POST['numero']) OR !isset($_POST['nom']) OR !isset($_POST['sexe']) OR !isset($_POST['taille']) OR !isset($_POST['date'])){
-        			header("Location: ../menu.php");
+        		if(!isset($_POST['numero']) OR !isset($_POST['nom']) OR !isset($_POST['sexe']) OR !isset($_POST['taille']) OR !isset($_POST['date_naissance'])){
+        		    header("Location: ../menu.php");
         		}
 
         		$_POST['numero'] = str_replace("'" , "\'" ,  $_POST['numero']);
-            $_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
-            $_POST['sexe'] = str_replace("'" , "\'" ,  $_POST['sexe']);
+                $_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
+                $_POST['sexe'] = str_replace("'" , "\'" ,  $_POST['sexe']);
         		$_POST['taille'] = str_replace("'" , "\'" ,  $_POST['taille']);
-            $_POST['date_naissance'] = str_replace("'" , "\'" ,  $_POST['date_naissance']);
+                $_POST['date_naissance'] = str_replace("'" , "\'" ,  $_POST['date_naissance']);
 
-            $query = 'SELECT * FROM Cheval WHERE LOWER(nom) LIKE LOWER(:nom) ' ;
+                $query = 'SELECT * FROM Cheval WHERE LOWER(nom) LIKE LOWER(:nom) ' ;
         		$variable = array(':nom' => '%' . $_POST['nom'] .'%');
 
         		if($_POST['numero'] != ''){
@@ -215,7 +218,7 @@
             				}
             			?>
             		</tbody>
-            	<table>
+            	</table>
         <?php
         		break;
           case 'ProprieteDe':
@@ -268,7 +271,7 @@
                     }
                   ?>
                 </tbody>
-              <table>
+              </table>
         <?php
         		break;
         	case 'Competition':
@@ -307,7 +310,7 @@
             				}
             			?>
             		</tbody>
-            	<table>
+            	</table>
         <?php
         		break;
         	case 'Obstacle':
@@ -350,7 +353,7 @@
             				}
             			?>
             		</tbody>
-            	<table>
+            	</table>
         <?php
         		break;
           case 'Dressage':
@@ -360,7 +363,7 @@
 
         		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
 
-        		$query = 'SELECT * FROM Obstacles WHERE LOWER(nom) LIKE LOWER(:nom) ' ;
+        		$query = 'SELECT * FROM Dressage WHERE LOWER(nom) LIKE LOWER(:nom) ' ;
         		$variable = array(':nom' => '%' . $_POST['nom'] . '%');
 
         		$req = $bdd ->prepare($query);
@@ -386,7 +389,7 @@
             				}
             			?>
             		</tbody>
-            	<table>
+            	</table>
         <?php
         		break;
         	case 'Ordres':
@@ -432,7 +435,7 @@
             				}
             			?>
             		</tbody>
-            	<table>
+            	</table>
         <?php
         		break;
         	case 'InstanceComp':
@@ -481,7 +484,7 @@
             				}
             			?>
             		</tbody>
-            	<table>
+            	</table>
         <?php
         		break;
         	case 'Participe':
@@ -542,7 +545,7 @@
             				}
             			?>
             		</tbody>
-            	<table>
+            	</table>
 
         <?php
         		break;
