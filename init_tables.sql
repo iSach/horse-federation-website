@@ -87,75 +87,74 @@ CREATE TABLE IF NOT EXISTS Participe(
   FOREIGN KEY (numero_cheval) REFERENCES Cheval(numero)
 )ENGINE = InnoDB;
 
-
 LOAD DATA LOCAL INFILE 'WWW/Data/Club.csv' INTO TABLE Club
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
 (numero, nom, code_postal, localite, rue, num, id_president);
 
 LOAD DATA LOCAL INFILE 'WWW/Data/Membre.csv' INTO TABLE Membre
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
 (id, nom, prenom, email, id_club);
 
 LOAD DATA LOCAL INFILE 'WWW/Data/Cheval.csv' INTO TABLE Cheval
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
-(numero, nom, sexe, taille, @date_naissance);
-SET date_naissance = STR_TO_DATE(@date_naissance, '%d/%m/%Y');
+IGNORE 1 LINES
+(numero, nom, sexe, taille, @date_naissance)
+SET date_naissance = STR_TO_DATE(@date_naissance, '%Y-%m-%d');
 
 LOAD DATA LOCAL INFILE 'WWW/Data/ProprieteDe.csv' INTO TABLE ProprieteDe
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
 (numero_membre, numero_cheval);
 
 LOAD DATA LOCAL INFILE 'WWW/Data/Competition.csv' INTO TABLE Competition
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
 (nom, libelle);
 
 LOAD DATA LOCAL INFILE 'WWW/Data/Obstacles.csv' INTO TABLE Obstacles
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
 (nom, nb_haies);
 
 LOAD DATA LOCAL INFILE 'WWW/Data/Dressage.csv' INTO TABLE Dressage
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
 (nom);
 
 LOAD DATA LOCAL INFILE 'WWW/Data/Ordres.csv' INTO TABLE Ordres
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
 (nom, numero, ordre);
 
 LOAD DATA LOCAL INFILE 'WWW/Data/InstanceComp.csv' INTO TABLE InstanceComp
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
-(nom, annee, id_organisation);
+IGNORE 1 LINES
+(nom, annee, id_organisateur);
 
 LOAD DATA LOCAL INFILE 'WWW/Data/Participe.csv' INTO TABLE Participe
 CHARACTER SET 'UTF8'
 FIELDS TERMINATED BY ';'
 LINES STARTING BY '' TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
 (numero_membre, nom, annee, numero_cheval, resultat);
 
