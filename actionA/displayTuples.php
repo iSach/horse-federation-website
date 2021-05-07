@@ -55,14 +55,14 @@
         		}
 
         		 $_POST['numero'] = str_replace("'" , "\'" ,  $_POST['numero']);
-        		 $_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
-             $_POST['code_postal'] = str_replace("'" , "\'" ,  $_POST['code_postal']);
-             $_POST['localite'] = str_replace("'" , "\'" ,  $_POST['localite']);
-             $_POST['rue'] = str_replace("'" , "\'" ,  $_POST['rue']);
-             $_POST['num'] = str_replace("'" , "\'" ,  $_POST['num']);
-             $_POST['id_president'] = str_replace("'" , "\'" ,  $_POST['id_president']);
+        		 $_POST['nom'] = trim(str_replace("'" , "\'" ,  $_POST['nom']));
+                 $_POST['code_postal'] = str_replace("'" , "\'" ,  $_POST['code_postal']);
+                 $_POST['localite'] = trim(str_replace("'" , "\'" ,  $_POST['localite']));
+                 $_POST['rue'] = trim(str_replace("'" , "\'" ,  $_POST['rue']));
+                 $_POST['num'] = str_replace("'" , "\'" ,  $_POST['num']);
+                 $_POST['id_president'] = str_replace("'" , "\'" ,  $_POST['id_president']);
 
-             $query = 'SELECT * FROM Club WHERE LOWER(nom) LIKE LOWER(:nom) AND LOWER(rue) LIKE LOWER(:rue) AND LOWER(localite) LIKE LOWER(:localite)' ;
+                 $query = 'SELECT * FROM Club WHERE LOWER(nom) LIKE LOWER(:nom) AND LOWER(rue) LIKE LOWER(:rue) AND LOWER(localite) LIKE LOWER(:localite)' ;
          		 $variable = array(':nom' => '%' . $_POST['nom'] .'%', ':rue' => '%' . $_POST['rue'] . '%', ':localite' => '%' . $_POST['localite'] . '%');
 
          	   if($_POST['numero'] != ''){
@@ -119,8 +119,8 @@
         		}
 
         		$_POST['id'] = str_replace("'" , "\'" ,  $_POST['id']);
-        		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
-        		$_POST['prenom'] = str_replace("'" , "\'" ,  $_POST['prenom']);
+        		$_POST['nom'] = trim(str_replace("'" , "\'" ,  $_POST['nom']));
+        		$_POST['prenom'] = trim(str_replace("'" , "\'" ,  $_POST['prenom']));
         		$_POST['email'] = str_replace("'" , "\'" ,  $_POST['email']);
         		$_POST['id_club'] = str_replace("'" , "\'" ,  $_POST['id_club']);
 
@@ -171,10 +171,10 @@
         		}
 
         		$_POST['numero'] = str_replace("'" , "\'" ,  $_POST['numero']);
-                $_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
-                $_POST['sexe'] = str_replace("'" , "\'" ,  $_POST['sexe']);
+                $_POST['nom'] = trim(str_replace("'" , "\'" ,  $_POST['nom']));
+                $_POST['sexe'] = trim(str_replace("'" , "\'" ,  $_POST['sexe']));
         		$_POST['taille'] = str_replace("'" , "\'" ,  $_POST['taille']);
-                $_POST['date_naissance'] = str_replace("'" , "\'" ,  $_POST['date_naissance']);
+                $_POST['date_naissance'] = trim(str_replace("'" , "\'" ,  $_POST['date_naissance']));
 
                 $query = 'SELECT * FROM Cheval WHERE LOWER(nom) LIKE LOWER(:nom) ' ;
         		$variable = array(':nom' => '%' . $_POST['nom'] .'%');
@@ -279,8 +279,8 @@
         			header("Location: ../menu.php");
         		}
 
-        		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
-        		$_POST['libelle'] = str_replace("'" , "\'" ,  $_POST['libelle']);
+        		$_POST['nom'] = trim(str_replace("'" , "\'" ,  $_POST['nom']));
+        		$_POST['libelle'] = trim(str_replace("'" , "\'" ,  $_POST['libelle']));
 
         	    $query = 'SELECT * FROM Competition WHERE LOWER(nom) LIKE LOWER(:nom) AND LOWER(libelle) LIKE LOWER(:libelle) ' ;
         		$variable = array(':nom' => '%' . $_POST['nom'] . '%', ':libelle' => '%' . $_POST['libelle'] .'%');
@@ -318,7 +318,7 @@
         			header("Location: ../menu.php");
         		}
 
-        		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
+        		$_POST['nom'] = trim(str_replace("'" , "\'" ,  $_POST['nom']));
         		$_POST['nb_haies'] = str_replace("'" , "\'" ,  $_POST['nb_haies']);
 
         		$query = 'SELECT * FROM Obstacles WHERE LOWER(nom) LIKE LOWER(:nom) ' ;
@@ -361,7 +361,7 @@
         			header("Location: ../menu.php");
         		}
 
-        		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
+        		$_POST['nom'] = trim(str_replace("'" , "\'" ,  $_POST['nom']));
 
         		$query = 'SELECT * FROM Dressage WHERE LOWER(nom) LIKE LOWER(:nom) ' ;
         		$variable = array(':nom' => '%' . $_POST['nom'] . '%');
@@ -397,9 +397,9 @@
         			header("Location: ../menu.php");
         		}
 
-        		$_POST['nom_comp'] = str_replace("'" , "\'" ,  $_POST['nom_comp']);
+        		$_POST['nom_comp'] = trim(str_replace("'" , "\'" ,  $_POST['nom_comp']));
         		$_POST['numero'] = str_replace("'" , "\'" ,  $_POST['numero']);
-            $_POST['ordre'] = str_replace("'" , "\'" ,  $_POST['ordre']);
+            $_POST['ordre'] = trim(str_replace("'" , "\'" ,  $_POST['ordre']));
 
             $query = 'SELECT * FROM Ordres WHERE LOWER(nom) LIKE LOWER(:nom) AND LOWER(ordre) LIKE LOWER(:ordre)';
 				    $variable = array(':nom' => '%' . $_POST['nom_comp'] .'%', ':ordre' => '%' . $_POST['ordre'] . '%');
@@ -443,7 +443,7 @@
         			header("Location: ../menu.php");
         		}
 
-        		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
+        		$_POST['nom'] = trim(str_replace("'" , "\'" ,  $_POST['nom']));
         		$_POST['annee'] = str_replace("'" , "\'" ,  $_POST['annee']);
         		$_POST['id_organisateur'] = str_replace("'" , "\'" ,  $_POST['id_organisateur']);
 
@@ -493,7 +493,7 @@
         		}
 
             $_POST['id_membre'] = str_replace("'" , "\'" ,  $_POST['id_membre']);
-        		$_POST['nom'] = str_replace("'" , "\'" ,  $_POST['nom']);
+        		$_POST['nom'] = trim(str_replace("'" , "\'" ,  $_POST['nom']));
         		$_POST['annee'] = str_replace("'" , "\'" ,  $_POST['annee']);
         		$_POST['id_cheval'] = str_replace("'" , "\'" ,  $_POST['id_cheval']);
             $_POST['resultat'] = str_replace("'" , "\'" ,  $_POST['resultat']);
