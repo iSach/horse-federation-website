@@ -1,0 +1,142 @@
+body{
+    font-family: Verdana, sans-serif;
+    background: #010a11;
+    color: white;
+    text-align: center;
+}
+
+.centered-box {
+    width: 500px;
+    margin: 30px auto auto;
+    padding: 30px;
+    text-align: center;
+    justify-content:center;
+    color: white;
+    background-color:#041c2e;
+    border: 1px solid rgb(116, 108, 96);
+    border-radius: 5px;
+}
+
+h2 {
+    width: 1000px;
+    margin: auto;
+    padding-bottom: 10px;
+    color: white;
+}
+
+input[type=text], input[type=password], input[type=number], input[type=email] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.blue-button {
+    width: 100%;
+    background-color: #3399FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.blue-button:hover {
+    background-color: white;
+    color: #3399FF;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #3399FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: #3399FF;
+}
+
+.deco{
+    position: absolute;
+    height: 35px;
+    color: white;
+    line-height: 35px;
+    width: 120px;
+    top: 15px;
+    right: 20px;
+    border-radius: 10px;
+    background: red;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.deco:hover {
+    background-color: #910000;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    color: white;
+    background-color:#041c2e;
+    border: 1px solid rgb(116, 108, 96);
+    display:flex;
+    justify-content:center;
+    right: 200px;
+    left: 200px;
+    margin: 0 200px;
+    border-radius: 5px;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav li a:hover {
+    background-color: #0a416b;
+    color: white;
+}
+
+table{
+    width: 1200px;
+    margin: 5px auto auto;
+    padding: 5px;
+    text-align: center;
+    justify-content:center;
+    color: white;
+    background-color:#041c2e;
+    border: 1px solid rgb(116, 108, 96);
+    border-radius: 5px;
+}
+
+th{
+    font-size: medium;
+}
+
+td{
+    border: 1px solid #062b45;
+    font-size: small;
+}
